@@ -1,6 +1,6 @@
 # HyperledgerFabric-basic
 
-In order to start the first Hyperledger fabric network Fabric-samples repository will be used. This repository is a set of CLI tool binaries and Fabric Docker Images that help you understand and use the basics of Fabric. Install the below dependencies before starting the project:
+To initiate the first Hyperledger Fabric network, we will utilize the Fabric-samples repository. This repository consists of CLI tool binaries and Fabric Docker Images, which are essential for comprehending and utilizing the fundamentals of Fabric. Before commencing the project, it is necessary to install the following dependencies:
 
 ## 1.Install Docker
 
@@ -40,7 +40,7 @@ To install binaries for Fabric samples you can use the command below:
        cd fabric-samples/test-network
  
  
-2. we would be running ./network.sh down command to remove any previous network containers or artifacts that still exist. 
+2. We would be running ./network.sh down command to remove any previous network containers or artifacts that still exist. 
 
        ./network.sh down
 
