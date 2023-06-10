@@ -5,6 +5,7 @@
 #### To publish your token, a gas fee is charged. Be sure to mine the said currency beforehand(I mined GoerliETH testnet from https://goerli-faucet.pk910.de/).
 #### Now check your Token on https://etherscan.io/
 ![image](https://github.com/Mehul6112/Hyperledger-Fabric-curve/assets/119481480/3e71c1fe-b96c-4158-8b71-9e2db3a39263)
+Note: Creating an ERC20 token involves careful planning, coding, and consideration of security best practices. It's essential to understand the implications and requirements of the Ethereum network and the ERC20 standard
 
 
 ## Setting Up a Development Environment such as Remix to compile and deploy your smart contract.
