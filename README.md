@@ -1,4 +1,16 @@
-# HyperledgerFabric-basic
+# Creating ERC-20 Tokens:-
+#### Create an account on any crypto-wallet like Metamask, Coinbase etc.
+#### Creating an ERC20 token involves a Solidity contract that implements the ERC20 token standard. This contract will define the token's properties, such as the total supply, symbol, name, decimals, and token balances for each address.
+#### Now this can either be done by manually writing the code or by using existing platforms like 20Lab, Kaleido etc. I used https://vittominacori.github.io/erc20-generator/ to create my ERC-20 token. Set out your preferences and voila, your contract is compiled and deployed.
+#### To publish your token, a gas fee is charged. Be sure to mine the said currency beforehand(I mined GoerliETH testnet from https://goerli-faucet.pk910.de/).
+#### Now check your Token on https://etherscan.io/
+![image](https://github.com/Mehul6112/Hyperledger-Fabric-curve/assets/119481480/3e71c1fe-b96c-4158-8b71-9e2db3a39263)
+
+
+## Setting Up a Development Environment such as Remix to compile and deploy your smart contract.
+#### working on it.
+
+# Hyperledger-Fabric
 
 To initiate the first Hyperledger Fabric network, we will utilize the Fabric-samples repository. This repository consists of CLI tool binaries and Fabric Docker Images, which are essential for comprehending and utilizing the fundamentals of Fabric. Before commencing the project, it is necessary to install the following dependencies:
 
@@ -48,7 +60,7 @@ To install binaries for Fabric samples you can use the command below:
 
         ./network.sh up
 
-###               Now our first Hyperledger Fabric Network is successfully running.
+### Now our first Hyperledger Fabric Network is successfully running.
 
 
 
