@@ -33,6 +33,7 @@ Note: Creating an ERC20 token involves careful planning, coding, and considerati
 #### 4. Click Deploy and select Confirm in the MetaMask notification window to pay for the transaction.
 ## View Contract Details:
 #### Copy the contract address from the Deployed Contracts window on the left panel & head to [Etherscan](https://etherscan.io/) explore the details of your deployed smart contract.
+![image](https://github.com/Mehul6112/Hyperledger-Fabric-curve/assets/119481480/1f430b8b-05c2-4998-a386-d10bb1b6f1a8)
 
 
 # Hyperledger-Fabric
