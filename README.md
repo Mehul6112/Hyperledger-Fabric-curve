@@ -11,18 +11,72 @@ Note: Creating an ERC20 token involves careful planning, coding, and considerati
 # Using a Development Environment such as Remix to compile and deploy your smart contract.
 ### Navigate to [remix](https://remix.ethereum.org) and select contracts > 1_Storage.sol from the File Explorers pane.
 ## Create or Modify the existing smart contract:
-        // SPDX-License-Identifier: MIT
-        pragma solidity ^0.8.17;
 
-        import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/token/ERC20/ERC20.sol";
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-        contract MyToken is ERC20 {
-            constructor(string memory name, string memory symbol) ERC20(name, symbol) {
-                // Mint 100 tokens to msg.sender
-                // 1 token = 1 * (10 ** decimals)
-                _mint(msg.sender, 100 * 10 ** uint(decimals()));
-            }
-        }
+interface IERC20 {
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+
+contract MehulToken is IERC20 {
+    string public name = "mehul";
+    string public symbol = "MEH";
+    uint8 public decimals = 18;
+    uint256 private _totalSupply;
+    mapping(address => uint256) private _balances;
+    mapping(address => mapping(address => uint256)) private _allowances;
+
+    constructor(uint256 initialSupply) {
+        _totalSupply = initialSupply * (10 ** uint256(decimals));
+        _balances[msg.sender] = _totalSupply;
+        emit Transfer(address(0), msg.sender, _totalSupply);
+    }
+
+    function totalSupply() public view override returns (uint256) {
+        return _totalSupply;
+    }
+
+    function balanceOf(address account) public view override returns (uint256) {
+        return _balances[account];
+    }
+
+    function transfer(address recipient, uint256 amount) public override returns (bool) {
+        require(_balances[msg.sender] >= amount, "Insufficient balance");
+        _balances[msg.sender] -= amount;
+        _balances[recipient] += amount;
+        emit Transfer(msg.sender, recipient, amount);
+        return true;
+    }
+
+    function allowance(address owner, address spender) public view override returns (uint256) {
+        return _allowances[owner][spender];
+    }
+
+    function approve(address spender, uint256 amount) public override returns (bool) {
+        _allowances[msg.sender][spender] = amount;
+        emit Approval(msg.sender, spender, amount);
+        return true;
+    }
+
+    function transferFrom(address sender, address recipient, uint256 amount) public override returns (bool) {
+        require(_balances[sender] >= amount, "Insufficient balance");
+        require(_allowances[sender][msg.sender] >= amount, "Not allowed to transfer");
+        _balances[sender] -= amount;
+        _balances[recipient] += amount;
+        _allowances[sender][msg.sender] -= amount;
+        emit Transfer(sender, recipient, amount);
+        return true;
+    }
+}
+
 #### Note: You can look more into it from [Solidity docs](https://docs.soliditylang.org/en/latest/) and [Solidity by Example](https://solidity-by-example.org/)
 ## Compile using Solidity Compiler(left nav pane):
 #### Check that your compiler version is same as the versions specified in the pragma solidity statement(0.8.17)
