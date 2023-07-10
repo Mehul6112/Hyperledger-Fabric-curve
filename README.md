@@ -34,6 +34,11 @@ Note: Creating an ERC20 token involves careful planning, coding, and considerati
 ## View Contract Details:
 #### Copy the contract address from the Deployed Contracts window on the left panel & head to [Etherscan](https://etherscan.io/) explore the details of your deployed smart contract.
 ![image](https://github.com/Mehul6112/Hyperledger-Fabric-curve/assets/119481480/1f430b8b-05c2-4998-a386-d10bb1b6f1a8)
+sOME ADDRESSES:
+        
+        0x8d7F6521dAf8AF6c0618D660924Bca59335e0F63
+        
+        0x16A05998e4c5086134E1A5A647C6fEAFfcE1a523
 
 
 # Hyperledger-Fabric
