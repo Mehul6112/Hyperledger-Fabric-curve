@@ -9,7 +9,7 @@ Note: Creating an ERC20 token involves careful planning, coding, and considerati
 
 
 # Using a Development Environment such as Remix to compile and deploy your smart contract.
-### Navigate to [remix](remix.ethereum.org) and select contracts > 1_Storage.sol from the File Explorers pane.
+### Navigate to [remix](https://remix.ethereum.org) and select contracts > 1_Storage.sol from the File Explorers pane.
 ## Create or Modify the existing smart contract:
         // SPDX-License-Identifier: MIT
         pragma solidity ^0.8.17;
