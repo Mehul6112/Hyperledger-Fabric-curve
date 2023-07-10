@@ -34,8 +34,8 @@ contract MehulToken is IERC20 {
     mapping(address => uint256) private _balances;
     mapping(address => mapping(address => uint256)) private _allowances;
 
-    constructor(uint256 initialSupply) {
-        _totalSupply = initialSupply * (10 ** uint256(decimals));
+    constructor() {
+        _totalSupply = 1000000 * (10 ** uint256(decimals));
         _balances[msg.sender] = _totalSupply;
         emit Transfer(address(0), msg.sender, _totalSupply);
     }
